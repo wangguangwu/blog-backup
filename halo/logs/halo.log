@@ -1,6 +1,12 @@
-2023-08-17T02:41:45.341+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [3720922f, L:/172.19.0.3:8090 - R:/172.104.11.4:58716] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-08-19T02:39:31.657+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [f0b60418, L:/172.19.0.3:8090 - R:/45.79.181.94:62712] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: À/À0À+À,Ì¨Ì©ÀÀ	ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-08-17T08:50:16.060+08:00 ERROR 7 --- [reactor-tcp-epoll-3] a.w.r.e.AbstractErrorWebExceptionHandler : [6dc48fab-3261]  500 Server Error for HTTP GET "/page/wangguangwu1999@gmail.com"
+2023-08-19T03:09:17.947+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [8c329ea3, L:/172.19.0.3:8090 - R:/205.210.31.37:64724] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-08-19T06:17:36.674+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [c826dc10, L:/172.19.0.3:8090 - R:/89.248.163.224:62529] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-08-19T11:51:14.360+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [c8f97f78, L:/172.19.0.3:8090 - R:/162.142.125.13:58050] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
+PRI * HTTP/2.0
+2023-08-19T12:05:18.912+08:00 ERROR 7 --- [reactor-tcp-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [5a54a863-11932]  500 Server Error for HTTP GET "/page/wangguangwu1999@gmail.com"
 
 java.lang.IllegalArgumentException: Page number must be a number
 	at run.halo.app.theme.router.PageUrlUtils.parseInt(PageUrlUtils.java:104) ~[api-2.8.0.jar:2.8.0]
@@ -47,8 +53,7 @@ Original Stack Trace:
 		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2072) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onComplete(FluxDefaultIfEmpty.java:134) ~[reactor-core-3.5.8.jar:3.5.8]
+		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onComplete(FluxDefaultIfEmpty.java:139) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.MonoUsingWhen$MonoUsingWhenSubscriber.deferredComplete(MonoUsingWhen.java:270) ~[reactor-core-3.5.8.jar:3.5.8]
@@ -57,13 +62,11 @@ Original Stack Trace:
 		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:384) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onComplete(MonoFlatMap.java:189) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoNext$NextSubscriber.onComplete(MonoNext.java:102) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:847) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:609) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:589) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:466) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:187) ~[reactor-core-3.5.8.jar:3.5.8]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:159) ~[reactor-core-3.5.8.jar:3.5.8]
+		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.5.8.jar:3.5.8]
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:489) ~[reactor-core-3.5.8.jar:3.5.8]
+		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:422) ~[reactor-core-3.5.8.jar:3.5.8]
+		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:185) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2205) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredComplete(FluxUsingWhen.java:392) ~[reactor-core-3.5.8.jar:3.5.8]
 		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:527) ~[reactor-core-3.5.8.jar:3.5.8]
@@ -178,5 +181,5 @@ Original Stack Trace:
 		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
 		at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-08-17T08:53:43.947+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [72187fcd, L:/172.19.0.3:8090 - R:/205.210.31.110:57660] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-08-19T12:46:59.464+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [42999af6, L:/172.19.0.3:8090 - R:/184.105.247.252:59366] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
