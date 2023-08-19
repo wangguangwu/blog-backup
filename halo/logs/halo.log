@@ -183,3 +183,13 @@ Original Stack Trace:
 
 2023-08-19T12:46:59.464+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [42999af6, L:/172.19.0.3:8090 - R:/184.105.247.252:59366] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
+2023-08-19T16:11:27.858+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generating RSA keys...
+2023-08-19T16:11:27.961+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generated RSA keys. Usage: 97 ms.
+2023-08-19T17:12:33.091+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [b04db9bc, L:/172.19.0.3:8090 - R:/167.94.138.125:41084] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
+PRI * HTTP/2.0
+2023-08-19T17:28:10.574+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [424694b0, L:/172.19.0.3:8090 - R:/54.68.215.24:47146] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÄIWJR3@{Eª;8ÍØÇØ²Ë\KÉÃÉ®Ó >À,À0 Ì©Ì¨ÌªÀ+À/ À$À( KÀ#À' GÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-08-19T20:42:22.917+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [943ad67a, L:/172.19.0.3:8090 - R:/89.248.163.224:63036] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-08-19T23:45:49.981+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [b54c370b, L:/172.19.0.3:8090 - R:/167.94.146.56:51296] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
+PRI * HTTP/2.0
