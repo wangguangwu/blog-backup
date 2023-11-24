@@ -1,4 +1,6 @@
-2023-11-23T02:38:30.078+08:00 ERROR 7 --- [boundedElastic-2036] org.thymeleaf.TemplateEngine             : [THYMELEAF][boundedElastic-2036] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
+2023-11-24T02:34:22.131+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [1baab9c9, L:/172.19.0.3:8090 - R:/45.79.128.205:54902] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T03:37:22.212+08:00 ERROR 7 --- [boundedElastic-2112] org.thymeleaf.TemplateEngine             : [THYMELEAF][boundedElastic-2112] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
@@ -17,7 +19,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categ
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-11-23T02:38:30.080+08:00 ERROR 7 --- [boundedElastic-2036] o.t.spring6.SpringWebFluxTemplateEngine  : [THYMELEAF][boundedElastic-2036] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
+2023-11-24T03:37:22.218+08:00 ERROR 7 --- [boundedElastic-2112] o.t.spring6.SpringWebFluxTemplateEngine  : [THYMELEAF][boundedElastic-2112] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
@@ -36,7 +38,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categ
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-11-23T02:38:30.082+08:00 ERROR 7 --- [boundedElastic-2036] a.w.r.e.AbstractErrorWebExceptionHandler : [f02915e7-125134]  500 Server Error for HTTP GET "/categories"
+2023-11-24T03:37:22.219+08:00 ERROR 7 --- [boundedElastic-2112] a.w.r.e.AbstractErrorWebExceptionHandler : [dc8b1ddc-128562]  500 Server Error for HTTP GET "/categories"
 
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
@@ -47,16 +49,6 @@ Error has been observed at the following site(s):
 	*__checkpoint ⇢ run.halo.app.security.authentication.login.UsernamePasswordLogoutHandler [DefaultWebFilterChain]
 	*__checkpoint ⇢ run.halo.app.security.authentication.login.DelegatingLogoutPageGeneratingWebFilter [DefaultWebFilterChain]
 	*__checkpoint ⇢ run.halo.app.security.authentication.login.UsernamePasswordAuthenticator [DefaultWebFilterChain]
-	*__checkpoint ⇢ AuthorizationWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ExceptionTranslationWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ LogoutWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ServerRequestCacheWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ SecurityContextServerWebExchangeWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HaloAnonymousAuthenticationWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ReactorContextWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ CsrfWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HttpHeaderWriterWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ServerWebExchangeReactorContextWebFilter [DefaultWebFilterChain]
 	*__checkpoint ⇢ org.springframework.security.web.server.WebFilterChainProxy [DefaultWebFilterChain]
 	*__checkpoint ⇢ org.springframework.web.filter.reactive.ServerHttpObservationFilter [DefaultWebFilterChain]
 	*__checkpoint ⇢ HTTP GET "/categories" [ExceptionHandlingWebHandler]
@@ -77,17 +69,33 @@ Original Stack Trace:
 		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
 		at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-11-23T03:07:42.136+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [75ed09f8, L:/172.19.0.3:8090 - R:/45.79.172.21:22740] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-11-24T05:24:36.807+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [62562f50, L:/172.19.0.3:8090 - R:/141.98.11.58:65482] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-11-23T06:46:01.547+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [3a735b02, L:/172.19.0.3:8090 - R:/192.241.194.104:59670] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-11-24T06:21:04.089+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [2d8fed9b, L:/172.19.0.3:8090 - R:/47.253.53.70:59172] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: Ì¨Ìª 3 = À), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-11-23T12:54:45.288+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [1e2f9acc, L:/172.19.0.3:8090 - R:/198.235.24.105:65458] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÒX<ÓGÐDL=SSÀ° &À+À/À,À0Ì©Ì¨À	ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-11-24T06:28:35.005+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [54540ded, L:/172.19.0.3:8090 - R:/47.253.62.238:56894] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÉΜ£VËÅF&¹ÀL´K­Ð5+Ñ^ ¤P!O 4Ì¨Ì©À/À0À+À,À	 Ì¨Ìª 3 = À), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-11-23T12:54:45.370+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [c35720f4, L:/172.19.0.3:8090 - R:/198.235.24.105:65474] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: À(À$ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-11-24T08:43:04.931+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [27de52eb, L:/172.19.0.3:8090 - R:/78.128.114.22:65445] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-11-23T13:01:45.675+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [e6513259, L:/172.19.0.3:8090 - R:/74.82.47.5:30154] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-11-24T08:57:34.321+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [d29c4286, L:/172.19.0.3:8090 - R:/89.248.163.96:64917] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-11-23T23:06:10.593+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generating RSA keys...
-2023-11-23T23:06:10.739+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generated RSA keys. Usage: 145 ms.
-2023-11-23T23:36:01.434+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [b3e4e11e, L:/172.19.0.3:8090 - R:/87.236.176.231:38007] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: }QÝ F\Î§¤8Á ±¨ÔÂ&É±«ZÉÜÎÞ@ÏÖY <À+À/À,À0Ì©Ì¨À	ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-11-24T09:18:46.850+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [0aacfefc, L:/172.19.0.3:8090 - R:/167.248.133.126:54006] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
+PRI * HTTP/2.0
+2023-11-24T10:20:14.449+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [6e1d1e09, L:/172.19.0.3:8090 - R:/216.218.206.68:65240] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
+2023-11-24T10:57:52.687+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [02b8ccb4, L:/172.19.0.3:8090 - R:/89.248.163.96:2390] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T11:16:31.628+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [bc0efe40, L:/172.19.0.3:8090 - R:/162.142.125.214:38534] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
+PRI * HTTP/2.0
+2023-11-24T14:59:06.060+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [24f74a67, L:/172.19.0.3:8090 - R:/205.210.31.220:58598] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: GÖ¿ÞIÙÙ8Ë¦±»£OÌUÛT00'Ï]G &À+À/À,À0Ì©Ì¨À	ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T14:59:06.812+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [9c7d0cd4, L:/172.19.0.3:8090 - R:/205.210.31.220:58606] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: À(À$ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T18:20:52.704+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [60f52d89, L:/172.19.0.3:8090 - R:/198.199.110.60:59866] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T19:59:56.589+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [4c19611d, L:/172.19.0.3:8090 - R:/141.98.11.58:62265] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T21:55:58.502+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [efd32c9d, L:/172.19.0.3:8090 - R:/91.92.244.22:58222] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-11-24T23:06:10.742+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generating RSA keys...
+2023-11-24T23:06:10.874+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generated RSA keys. Usage: 131 ms.
