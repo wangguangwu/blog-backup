@@ -1,193 +1,4 @@
-2023-12-22T02:33:36.452+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [1091574b, L:/172.19.0.3:8090 - R:/172.104.11.4:41296] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
-GET /bad-request HTTP/1.0
-2023-12-22T03:57:31.804+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [fd13eb53, L:/172.19.0.3:8090 - R:/167.94.145.55:42334] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
-PRI * HTTP/2.0
-2023-12-22T11:00:07.469+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [a42e300b, L:/172.19.0.3:8090 - R:/123.160.221.141:12270] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
-GET /bad-request HTTP/1.0
-2023-12-22T11:16:14.938+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [8afbaf98, L:/172.19.0.3:8090 - R:/178.159.37.98:65418] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
-GET /bad-request HTTP/1.0
-2023-12-22T13:19:29.948+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [6df28617, L:/172.19.0.3:8090 - R:/205.210.31.95:64638] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: Invalid separator), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
-GET /bad-request HTTP/1.0
-2023-12-22T13:19:30.396+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [242a9c66, L:/172.19.0.3:8090 - R:/205.210.31.95:64640] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: À(À$ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
-GET /bad-request HTTP/1.0
-2023-12-22T13:58:56.548+08:00 ERROR 7 --- [reactor-tcp-epoll-1] a.w.r.e.AbstractErrorWebExceptionHandler : [8cfe88a6-231511]  500 Server Error for HTTP GET "/page/wangguangwu1999@gmail.com"
-
-java.lang.IllegalArgumentException: Page number must be a number
-	at run.halo.app.theme.router.PageUrlUtils.parseInt(PageUrlUtils.java:104) ~[api-2.8.0.jar:2.8.0]
-	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
-Error has been observed at the following site(s):
-	*__checkpoint ⇢ Handler run.halo.app.theme.router.factories.IndexRouteFactory$$Lambda$2255/0x00007fe850a78450@46b790fa [DispatcherHandler]
-	*__checkpoint ⇢ run.halo.app.security.InitializeRedirectionWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ run.halo.app.security.authentication.login.UsernamePasswordLogoutHandler [DefaultWebFilterChain]
-	*__checkpoint ⇢ run.halo.app.security.authentication.login.DelegatingLogoutPageGeneratingWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ run.halo.app.security.authentication.login.UsernamePasswordAuthenticator [DefaultWebFilterChain]
-	*__checkpoint ⇢ AuthorizationWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ExceptionTranslationWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ LogoutWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ServerRequestCacheWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ SecurityContextServerWebExchangeWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HaloAnonymousAuthenticationWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ReactorContextWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ CsrfWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HttpHeaderWriterWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ ServerWebExchangeReactorContextWebFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ org.springframework.security.web.server.WebFilterChainProxy [DefaultWebFilterChain]
-	*__checkpoint ⇢ org.springframework.web.filter.reactive.ServerHttpObservationFilter [DefaultWebFilterChain]
-	*__checkpoint ⇢ HTTP GET "/page/wangguangwu1999@gmail.com" [ExceptionHandlingWebHandler]
-Original Stack Trace:
-		at run.halo.app.theme.router.PageUrlUtils.parseInt(PageUrlUtils.java:104) ~[api-2.8.0.jar:2.8.0]
-		at run.halo.app.theme.router.PageUrlUtils.toNextPage(PageUrlUtils.java:94) ~[api-2.8.0.jar:2.8.0]
-		at run.halo.app.theme.router.PageUrlUtils.nextPageUrl(PageUrlUtils.java:54) ~[api-2.8.0.jar:2.8.0]
-		at run.halo.app.theme.router.factories.IndexRouteFactory.lambda$postList$2(IndexRouteFactory.java:61) ~[classes/:2.8.0]
-		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:283) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:245) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onNext(FluxDefaultIfEmpty.java:122) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:245) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2071) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoCollectList$MonoCollectListSubscriber.onComplete(MonoCollectList.java:118) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxConcatMapNoPrefetch$FluxConcatMapNoPrefetchSubscriber.innerComplete(FluxConcatMapNoPrefetch.java:286) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxConcatMap$ConcatMapInner.onComplete(FluxConcatMap.java:887) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.secondComplete(MonoFlatMap.java:246) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapInner.onNext(MonoFlatMap.java:305) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.complete(MonoIgnoreThen.java:292) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onNext(MonoIgnoreThen.java:187) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:236) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxDefaultIfEmpty$DefaultIfEmptySubscriber.onComplete(FluxDefaultIfEmpty.java:139) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoUsingWhen$MonoUsingWhenSubscriber.deferredComplete(MonoUsingWhen.java:270) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:527) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:384) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:159) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoNext$NextSubscriber.onNext(MonoNext.java:82) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.tryEmitScalar(FluxFlatMap.java:489) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onNext(FluxFlatMap.java:422) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxBuffer$BufferExactSubscriber.onComplete(FluxBuffer.java:185) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2205) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.deferredComplete(FluxUsingWhen.java:392) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxUsingWhen$CommitInner.onComplete(FluxUsingWhen.java:527) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2205) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators$MultiSubscriptionSubscriber.onComplete(Operators.java:2205) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:209) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.pool.SimpleDequePool.maybeRecycleAndDrain(SimpleDequePool.java:537) ~[reactor-pool-1.0.1.jar:1.0.1]
-		at reactor.pool.SimpleDequePool$QueuePoolRecyclerInner.onComplete(SimpleDequePool.java:767) ~[reactor-pool-1.0.1.jar:1.0.1]
-		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.pool.SimpleDequePool$QueuePoolRecyclerMono.subscribe(SimpleDequePool.java:879) ~[reactor-pool-1.0.1.jar:1.0.1]
-		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:240) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators.complete(Operators.java:137) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoEmpty.subscribe(MonoEmpty.java:46) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:263) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:240) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.onComplete(MonoIgnoreThen.java:203) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onComplete(MonoIgnoreElements.java:89) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onComplete(FluxHandleFuseable.java:239) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoSupplier$MonoSupplierSubscription.request(MonoSupplier.java:148) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.request(FluxHandleFuseable.java:260) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onSubscribe(MonoIgnoreElements.java:72) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxHandleFuseable$HandleFuseableSubscriber.onSubscribe(FluxHandleFuseable.java:164) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoSupplier.subscribe(MonoSupplier.java:48) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen$ThenIgnoreMain.subscribeNext(MonoIgnoreThen.java:263) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreThen.subscribe(MonoIgnoreThen.java:51) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onError(FluxOnErrorResume.java:103) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoIgnoreElements$IgnoreElementsSubscriber.onError(MonoIgnoreElements.java:84) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMap$MapSubscriber.onError(FluxMap.java:134) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFilter$FilterSubscriber.onError(FluxFilter.java:157) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFilter$FilterConditionalSubscriber.onError(FluxFilter.java:291) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMap$MapConditionalSubscriber.onError(FluxMap.java:265) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Operators.error(Operators.java:198) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoError.subscribe(MonoError.java:53) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoDeferContextual.subscribe(MonoDeferContextual.java:55) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.InternalMonoOperator.subscribe(InternalMonoOperator.java:64) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoDefer.subscribe(MonoDefer.java:53) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.Mono.subscribe(Mono.java:4495) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxUsingWhen$UsingWhenSubscriber.onComplete(FluxUsingWhen.java:384) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.checkTerminated(FluxFlatMap.java:847) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drainLoop(FluxFlatMap.java:609) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.drain(FluxFlatMap.java:589) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxFlatMap$FlatMapMain.onComplete(FluxFlatMap.java:466) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.checkTerminated(FluxWindowPredicate.java:540) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drainLoop(FluxWindowPredicate.java:488) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.drain(FluxWindowPredicate.java:432) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxWindowPredicate$WindowPredicateMain.onComplete(FluxWindowPredicate.java:312) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.MonoFlatMapMany$FlatMapManyInner.onComplete(MonoFlatMapMany.java:260) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxPeekFuseable$PeekFuseableSubscriber.onComplete(FluxPeekFuseable.java:277) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onComplete(FluxContextWrite.java:126) ~[reactor-core-3.5.8.jar:3.5.8]
-		at io.asyncer.r2dbc.mysql.internal.util.DiscardOnCancelSubscriber.onComplete(DiscardOnCancelSubscriber.java:84) ~[r2dbc-mysql-1.0.2.jar:1.0.2]
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onComplete(FluxPeekFuseable.java:940) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxHandle$HandleConditionalSubscriber.onNext(FluxHandle.java:359) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.FluxPeekFuseable$PeekConditionalSubscriber.onNext(FluxPeekFuseable.java:854) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.SinkManyEmitterProcessor.drain(SinkManyEmitterProcessor.java:471) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.SinkManyEmitterProcessor.tryEmitNext(SinkManyEmitterProcessor.java:269) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.SinkManySerialized.tryEmitNext(SinkManySerialized.java:100) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.core.publisher.InternalManySink.emitNext(InternalManySink.java:27) ~[reactor-core-3.5.8.jar:3.5.8]
-		at io.asyncer.r2dbc.mysql.client.ReactorNettyClient$ResponseSink.next(ReactorNettyClient.java:356) ~[r2dbc-mysql-1.0.2.jar:1.0.2]
-		at io.asyncer.r2dbc.mysql.client.ReactorNettyClient.lambda$new$0(ReactorNettyClient.java:115) ~[r2dbc-mysql-1.0.2.jar:1.0.2]
-		at reactor.core.publisher.FluxPeek$PeekSubscriber.onNext(FluxPeek.java:185) ~[reactor-core-3.5.8.jar:3.5.8]
-		at reactor.netty.channel.FluxReceive.drainReceiver(FluxReceive.java:292) ~[reactor-netty-core-1.1.9.jar:1.1.9]
-		at reactor.netty.channel.FluxReceive.onInboundNext(FluxReceive.java:401) ~[reactor-netty-core-1.1.9.jar:1.1.9]
-		at reactor.netty.channel.ChannelOperations.onInboundNext(ChannelOperations.java:411) ~[reactor-netty-core-1.1.9.jar:1.1.9]
-		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) ~[reactor-netty-core-1.1.9.jar:1.1.9]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.asyncer.r2dbc.mysql.client.MessageDuplexCodec.handleDecoded(MessageDuplexCodec.java:178) ~[r2dbc-mysql-1.0.2.jar:1.0.2]
-		at io.asyncer.r2dbc.mysql.client.MessageDuplexCodec.channelRead(MessageDuplexCodec.java:81) ~[r2dbc-mysql-1.0.2.jar:1.0.2]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) ~[netty-codec-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) ~[netty-codec-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1383) ~[netty-handler-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.ssl.SslHandler.decodeJdkCompatible(SslHandler.java:1246) ~[netty-handler-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:1295) ~[netty-handler-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.codec.ByteToMessageDecoder.decodeRemovalReentryProtection(ByteToMessageDecoder.java:529) ~[netty-codec-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:468) ~[netty-codec-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:290) ~[netty-codec-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919) ~[netty-transport-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:800) ~[netty-transport-classes-epoll-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:499) ~[netty-transport-classes-epoll-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:397) ~[netty-transport-classes-epoll-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
-		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) ~[netty-common-4.1.94.Final.jar:4.1.94.Final]
-		at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
-
-2023-12-22T16:00:12.496+08:00  WARN 7 --- [reactor-http-epoll-1] r.n.http.server.HttpServerOperations     : [5f6236db, L:/172.19.0.3:8090 - R:/65.49.1.119:49691] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
-GET /bad-request HTTP/1.0
-2023-12-22T16:47:22.947+08:00 ERROR 7 --- [boundedElastic-4129] org.thymeleaf.TemplateEngine             : [THYMELEAF][boundedElastic-4129] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
+2023-12-23T00:47:18.463+08:00 ERROR 7 --- [boundedElastic-4168] org.thymeleaf.TemplateEngine             : [THYMELEAF][boundedElastic-4168] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
@@ -206,7 +17,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categ
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-12-22T16:47:22.948+08:00 ERROR 7 --- [boundedElastic-4129] o.t.spring6.SpringWebFluxTemplateEngine  : [THYMELEAF][boundedElastic-4129] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
+2023-12-23T00:47:18.464+08:00 ERROR 7 --- [boundedElastic-4168] o.t.spring6.SpringWebFluxTemplateEngine  : [THYMELEAF][boundedElastic-4168] Exception processing template "categories": Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
@@ -225,7 +36,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categ
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
 	at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-12-22T16:47:22.949+08:00 ERROR 7 --- [boundedElastic-4129] a.w.r.e.AbstractErrorWebExceptionHandler : [11524c13-231938]  500 Server Error for HTTP GET "/categories"
+2023-12-23T00:47:18.472+08:00 ERROR 7 --- [boundedElastic-4168] a.w.r.e.AbstractErrorWebExceptionHandler : [d50a259c-233095]  500 Server Error for HTTP GET "/categories"
 
 org.thymeleaf.exceptions.TemplateInputException: Error resolving template [categories], template might not exist or might not be accessible by any of the configured Template Resolvers
 	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869) ~[thymeleaf-3.1.1.RELEASE.jar:3.1.1.RELEASE]
@@ -266,11 +77,44 @@ Original Stack Trace:
 		at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source) ~[na:na]
 		at java.base/java.lang.Thread.run(Unknown Source) ~[na:na]
 
-2023-12-22T17:52:18.769+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [1eac4198, L:/172.19.0.3:8090 - R:/162.243.135.31:54240] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-12-23T02:36:33.037+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [0992e0ee, L:/172.19.0.3:8090 - R:/45.79.172.21:62504] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: À/À0À+À,Ì¨Ì©ÀÀ	ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
-2023-12-22T19:33:31.784+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [300942d3, L:/172.19.0.3:8090 - R:/167.248.133.37:34638] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
+2023-12-23T03:28:48.730+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [56ae37b6, L:/172.19.0.3:8090 - R:/91.92.244.22:40902] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: {*GÁ:ÀNÖËJHSÈA3FÚ:D&ÍC >À,À0 Ì©Ì¨ÌªÀ+À/ À$À( KÀ#À' GÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T07:12:14.130+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [17affcfa, L:/172.19.0.3:8090 - R:/79.124.49.202:2979] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T08:06:08.848+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [7bac6962, L:/172.19.0.3:8090 - R:/167.94.146.52:49134] Decoding failed: REQUEST(decodeResult: failure(java.lang.IllegalStateException: Unexpected request [PRI * HTTP/2.0]), version: HTTP/2.0)
 PRI * HTTP/2.0
-2023-12-22T23:06:15.093+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generating RSA keys...
-2023-12-22T23:06:15.192+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generated RSA keys. Usage: 98 ms.
-2023-12-22T23:31:40.000+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [3f7410ef, L:/172.19.0.3:8090 - R:/79.124.49.202:62554] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+2023-12-23T08:29:39.907+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [0c20e530, L:/172.19.0.3:8090 - R:/198.235.24.196:61894] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: Ë \²^¾S¿Ë¥ØUQ\±$-ºÏR;ÙÉ4 &À+À/À,À0Ì©Ì¨À	ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
 GET /bad-request HTTP/1.0
+2023-12-23T08:29:40.418+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [50c1e6a1, L:/172.19.0.3:8090 - R:/198.235.24.196:59000] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T10:22:36.234+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [750a9b44, L:/172.19.0.3:8090 - R:/64.62.197.11:62553] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T12:12:33.362+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [66b62852, L:/172.19.0.3:8090 - R:/117.144.207.226:2163] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: AND EXTRACTVALUE(1,CONCAT(0X7E,MD5(99999999))) -- A HTTP/1.1), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T12:12:44.521+08:00  WARN 7 --- [reactor-http-epoll-3] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [_plugin/head/../../../../../../../../../../../../../../../../etc/passwd]"
+2023-12-23T12:12:45.945+08:00  WARN 7 --- [reactor-http-epoll-3] o.s.w.r.resource.ResourceWebHandler      : "Path with "WEB-INF" or "META-INF": [theme/META-INF/%c0%ae%c0%ae/META-INF/MANIFEST.MF]"
+2023-12-23T12:12:51.513+08:00  WARN 7 --- [reactor-http-epoll-3] o.s.w.r.resource.ResourceWebHandler      : "Path with "WEB-INF" or "META-INF": [s/anything/_/META-INF/maven/com.atlassian.jira/atlassian-jira-webapp/pom.xml]"
+2023-12-23T12:13:07.412+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [3429c916, L:/172.19.0.3:8090 - R:/117.144.207.226:2164] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: AND EXTRACTVALUE(22,CONCAT(0X7E,MD5(960075750)))-- X HTTP/1.1), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T12:13:15.956+08:00  WARN 7 --- [reactor-http-epoll-4] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [../conf/config.properties]"
+2023-12-23T12:13:22.389+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [e7e9715b, L:/172.19.0.3:8090 - R:/117.144.207.226:2165] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ) ORDER BY 1 DESC,EXTRACTVALUE(RAND(),CONCAT(0X7C,MD5(900750500))) DESC --+A HTTP/1.1), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T12:13:24.293+08:00  WARN 7 --- [reactor-http-epoll-3] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [_next/../../../../../../../../../../etc/passwd]"
+2023-12-23T12:13:29.476+08:00  WARN 7 --- [reactor-http-epoll-3] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [../../../../../../../../windows/win.ini]"
+2023-12-23T12:13:34.227+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [19d9f5fc, L:/172.19.0.3:8090 - R:/117.144.207.226:2166] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: MD5($_GET[1])%3B{//../RSS HTTP/1.1), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T12:13:35.051+08:00  WARN 7 --- [reactor-http-epoll-4] r.n.http.server.HttpServerOperations     : [0db76d95, L:/172.19.0.3:8090 - R:/117.144.207.226:2167] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: AND EXTRACTVALUE(1,CONCAT(0X7E,MD5(900151201))) --+ HTTP/1.1), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T12:13:35.969+08:00  WARN 7 --- [reactor-http-epoll-1] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [dana-na/../dana/html5acc/guacamole/../../../../../../../etc/passwd]"
+2023-12-23T12:13:37.292+08:00  WARN 7 --- [reactor-http-epoll-1] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [%20../web-inf]"
+2023-12-23T12:13:54.743+08:00  WARN 7 --- [reactor-http-epoll-1] o.s.w.r.resource.ResourceWebHandler      : "Path contains "../" after call to StringUtils#cleanPath: [../../../../../../../../../../../../../../../../../../../../etc/passwd]"
+2023-12-23T15:49:28.876+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [3b96d354, L:/172.19.0.3:8090 - R:/87.236.176.10:43143] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: invalid version format: ÀÀ), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T17:31:44.849+08:00  WARN 7 --- [reactor-http-epoll-2] r.n.http.server.HttpServerOperations     : [fba6d734, L:/172.19.0.3:8090 - R:/45.129.14.177:63775] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T18:28:34.361+08:00  WARN 7 --- [reactor-http-epoll-3] r.n.http.server.HttpServerOperations     : [e130188b, L:/172.19.0.3:8090 - R:/79.124.49.202:63785] Decoding failed: FULL_REQUEST(decodeResult: failure(java.lang.IllegalArgumentException: text is empty (possibly HTTP/0.9)), version: HTTP/1.0, content: UnpooledByteBufAllocator$InstrumentedUnpooledUnsafeHeapByteBuf(ridx: 0, widx: 0, cap: 0))
+GET /bad-request HTTP/1.0
+2023-12-23T23:06:15.194+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generating RSA keys...
+2023-12-23T23:06:15.390+08:00  INFO 7 --- [scheduling-1] r.h.a.s.a.login.impl.RsaKeyService       : Generated RSA keys. Usage: 195 ms.
